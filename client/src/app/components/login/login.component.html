@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="title">Login Form</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginClick()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        [value]="loginForm.get('email').value"
+      />
+    </mat-form-field>
+    <p class="error" *ngIf="email.errors?.required && email.touched">
+      Enter Email
+    </p>
+    <p class="error" *ngIf="email.errors?.pattern">Enter a valid email</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        [value]="loginForm.get('password').value"
+      />
+    </mat-form-field>
+    <p class="error" *ngIf="password.errors?.required && password.touched">
+      Enter Password
+    </p>
+    <section class="text-center">
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </div>
+      <p>Not registered yet? <a routerLink="/signup">signup</a></p>
+    </section>
+  </form>
+</div>

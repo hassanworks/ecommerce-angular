@@ -1,0 +1,72 @@
+<div class="container">
+  <h2 class="title">Signup Form</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="registerUser()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="name"
+        [value]="signupForm.get('name').value"
+      />
+    </mat-form-field>
+    <p class="error" *ngIf="name.errors?.required && name.touched">
+      Enter name
+    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        [value]="signupForm.get('email').value"
+      />
+    </mat-form-field>
+    <p class="error" *ngIf="email.errors?.required && email.touched">
+      Enter Email
+    </p>
+    <p class="error" *ngIf="email.errors?.pattern">
+      Enter a valid email address
+    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        [value]="signupForm.get('password').value"
+      />
+    </mat-form-field>
+    <p class="error" *ngIf="password.errors?.required && password.touched">
+      Enter Password
+    </p>
+    <p class="error" *ngIf="password.errors?.minlength">
+      You have to enter at least 6 characters
+    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Repeat Password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="repeatPassword"
+        [value]="signupForm.get('repeatPassword').value"
+      />
+    </mat-form-field>
+    <p
+      class="error"
+      *ngIf="repeatPassword.errors?.required && repeatPassword.touched"
+    >
+      Repeat Password
+    </p>
+    <p class="error" *ngIf="repeatPassword.errors?.minlength">
+      You have to enter at least 6 characters
+    </p>
+    <section class="text-center">
+      <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">Sign up</button>
+      </div>
+      <p>Already registered? <a routerLink="/login">sign in</a></p>
+    </section>
+    <!-- <button class="btn btn-outline-primary" type="submit">Register</button> -->
+  </form>
+</div>

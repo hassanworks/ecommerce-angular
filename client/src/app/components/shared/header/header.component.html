@@ -1,0 +1,26 @@
+<section class="header">
+  <div class="container">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+      <li ngbNavItem>
+        <a ngbNavLink routerLink="/home">Home</a>
+        <!-- <ng-template ngbNavContent>First content</ng-template> -->
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink routerLink="/checkout">Checkout</a>
+        <!-- <ng-template ngbNavContent>First content</ng-template> -->
+      </li>
+      <!-- <li ngbNavItem>
+        <a ngbNavLink routerLink="/categories">Categories</a>
+        <ng-template ngbNavContent>Second content</ng-template>
+      </li> -->
+      <li ngbNavItem class="logout">
+        <a ngbNavLink (click)="logout()">Logout</a>
+        <!-- <ng-template ngbNavContent>Second content</ng-template> -->
+      </li>
+      <li ngbNavItem class="user">
+        <h5>{{loggedinUserName}}</h5>
+        <!-- <ng-template ngbNavContent>Second content</ng-template> -->
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+.container {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.error {
+  text-align: left;
+  color: red;
+  font-size: 12px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

@@ -1,0 +1,23 @@
+.container {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.title {
+  padding-bottom: 20px;
+}
+.row {
+  align-items: baseline;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.product-name {
+  font-weight: 700;
+}
